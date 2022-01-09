@@ -71,3 +71,6 @@ class AdminManagement(object):
 
     def edit_location_permission(self):
         return self.driver.find_element(By.XPATH, Locator.edit_location_checkbox)
+
+    def confirm_admin_email(self):
+        return self.driver.find_element(By.XPATH, Locator.admin_email)

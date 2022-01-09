@@ -29,3 +29,5 @@ class Locator(object):
     admin_edit_button = '//*[@id="content"]/div[2]/div[2]/div/div/div[1]/div[2]/table/tbody/tr[1]/td[10]/span/a[1]/i'
     add_location_checkbox = '//*[@value="addlocations"]'
     edit_location_checkbox = '//*[@value="editlocations"]'
+
+    admin_email = '//*[@id="content"]/div[2]/div[2]/div/div/div[1]/div[2]/table/tbody/tr/td[5]/a'

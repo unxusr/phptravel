@@ -19,7 +19,7 @@ class AddNewAdmin(WebDriverSetup):
         admin_mngmt = AdminManagement(driver)
         
         # Execute generate data function 
-        print(generate_data)
+        generate_data()
 
         with open('generated_data.json', 'r') as dt:
             user = json.load(dt)
@@ -35,12 +35,12 @@ class AddNewAdmin(WebDriverSetup):
         admin_mngmt.fill_in_country().click()
         admin_mngmt.fill_in_country().send_keys(user['country'])
         admin_mngmt.fill_in_country().send_keys(k.Keys.ENTER)
+        sleep(2)
         admin_mngmt.fill_in_phone().send_keys(user['phone'])
-        sleep(1)
         admin_mngmt.fill_in_address_1().send_keys(user['address1'])
-        #admin_mngmt.submit_new_admin_form().click()
-        sleep(9)
-        #admin_mngmt.edit_new_admin().click
+        sleep(3)
+        self.assertEqual(admin_mngmt.confirm_admin_email().text, user['email'])
+        sleep(4)
 
 
 if __name__ == '__main__':
