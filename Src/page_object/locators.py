@@ -24,3 +24,8 @@ class Locator(object):
     address1 = '//*[@id="content"]/form/div[1]/div/div[2]/div/div[8]/div/input'
     address2 = '//*[@id="content"]/form/div[1]/div/div[2]/div/div[9]/div/input'
     submit = '//*[@id="content"]/form/div[1]/div/div[3]/button'
+
+    # Admin Accounts page
+    admin_edit_button = '//*[@id="content"]/div[2]/div[2]/div/div/div[1]/div[2]/table/tbody/tr[1]/td[10]/span/a[1]/i'
+    add_location_checkbox = '//*[@value="addlocations"]'
+    edit_location_checkbox = '//*[@value="editlocations"]'

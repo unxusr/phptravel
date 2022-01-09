@@ -62,3 +62,12 @@ class AdminManagement(object):
     
     def submit_new_admin_form(self):
         return self.driver.find_element(By.XPATH, Locator.submit)
+
+    def edit_new_admin_button(self):
+        return self.driver.find_element(By.XPATH, Locator.admin_edit_button)
+
+    def add_location_permission(self):
+        return self.driver.find_element(By.XPATH, Locator.add_location_checkbox)
+
+    def edit_location_permission(self):
+        return self.driver.find_element(By.XPATH, Locator.edit_location_checkbox)

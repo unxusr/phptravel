@@ -31,7 +31,3 @@ def generate_data():
         return data
 
 generate_data()
-
-with open('generated_data.json', 'r') as dd:
-    user = json.load(dd)
-user = user['data'][0]

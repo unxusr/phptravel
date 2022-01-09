@@ -1,6 +1,7 @@
 from Src.test_base.web_driver_setup import WebDriverSetup
 from Src.page_object.pages.admin_page import AdminPage, AdminManagement
 from Test.Scripts.test_authentication import AuthenticationAdminUser 
+from Test.Scripts.test_edit_new_admin_permissions import EditNewAdmin
 from Test.Scripts.generate_data import generate_data
 import unittest 
 from selenium import webdriver
@@ -14,7 +15,7 @@ class AddNewAdmin(WebDriverSetup):
         driver = self.driver
         driver.get('https://phptravels.com/demo')
         driver.set_page_load_timeout(30)
-        AuthenticationAdminUser.test_authentication(self)      
+        AuthenticationAdminUser.test_authentication(self)
         admin_mngmt = AdminManagement(driver)
         
         # Execute generate data function 
@@ -31,12 +32,16 @@ class AddNewAdmin(WebDriverSetup):
         admin_mngmt.fill_in_last_name().send_keys(user['last_name'])
         admin_mngmt.fill_in_email().send_keys(user['email'])
         admin_mngmt.fill_in_password().send_keys('demoadminuser')
-        admin_mngmt.fill_in_phone().send_keys(user['phone'])
-        admin_mngmt.fill_in_address_1().send_keys(user['address1'])
-        admin_mngmt.fill_in_address_2().send_keys(user['address2'])
         admin_mngmt.fill_in_country().click()
         admin_mngmt.fill_in_country().send_keys(user['country'])
         admin_mngmt.fill_in_country().send_keys(k.Keys.ENTER)
+        admin_mngmt.fill_in_phone().send_keys(user['phone'])
+        sleep(1)
+        admin_mngmt.fill_in_address_1().send_keys(user['address1'])
+        #admin_mngmt.submit_new_admin_form().click()
+        sleep(9)
+        #admin_mngmt.edit_new_admin().click
+
 
 if __name__ == '__main__':
     unittest.main()
